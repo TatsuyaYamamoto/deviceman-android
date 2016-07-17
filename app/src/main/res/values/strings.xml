@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">DeviceMan</string>
+
+
+
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="title_activity_main">Barcode Reader Sample</string>
+    <string name="barcode_header">Click &quot;Read Barcode&quot; to read a barcode</string>
+    <string name="read_barcode">Read Barcode</string>
+    <string name="auto_focus">Auto Focus</string>
+    <string name="use_flash">Use Flash</string>
+    <string name="barcode_success">Barcode read successfully</string>
+    <string name="barcode_failure">No barcode captured</string>
+    <string name="barcode_error">"Error reading barcode: %1$s"</string>
+
+
+
+    <string name="large_text">
+        "使い方！\n\n"
+
+        "1. ユーザーQRコード読み込み\n\n"
+        "hogehoge\n"
+        "hogehogehgeohge\n\n"
+
+        "2. 貸出、返却選択\n\n"
+        "hogehoge\n"
+        "hogehogehgeohge\n\n"
+
+        "3. デバイスQRコード読み込み\n\n"
+        "hogehoge\n"
+        "hogehogehgeohge\n\n"
+
+
+    </string>
+    <string name="action_settings">Settings</string>
+
+
+
+
+    <!--通信結果通知-->
+    <string name="success_checkout">借り出し処理完了！（・８・）</string>
+    <string name="error_checkout_later">返却日時は現在時刻より遅いものを指定して下さい（・８・）</string>
+    <string name="error_checkout_confilt">既に貸出中です（・８・）</string>
+
+    <string name="success_return">返却処理完了！（・８・）</string>
+    <string name="error_return_not_checked">既に貸出中です（・８・）</string>
+
+    <string name="error_invalid_id">"IDがサーバー未登録のものです（・８・）"</string>
+    <string name="error_connection">通信失敗_(┐「ε:)_</string>
+</resources>

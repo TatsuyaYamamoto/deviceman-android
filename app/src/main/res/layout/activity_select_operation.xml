@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/fab_margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_user_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hogehogeさん"
+        android:gravity="center"
+        android:textSize="@dimen/test_size_large"/>
+
+    <TextView
+        android:id="@+id/text_greeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="おつかれっす！"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/fab_margin"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/button_lending"
+            android:text="端末を借りる！\n(がんばれ)"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/common_signin_btn_dark_text_default"
+            android:textSize="@dimen/test_size_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_weight="0.45"/>
+
+        <Button
+            android:id="@+id/button_return"
+            android:text="端末を返す！\n(おつかれ)"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/common_signin_btn_dark_text_default"
+            android:textSize="@dimen/test_size_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_weight="0.45"/>
+
+        <Button
+            android:id="@+id/button_finish"
+            android:text="EXIT"
+            android:textSize="@dimen/test_size_medium"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_weight="0.1"/>
+
+    </LinearLayout>
+</LinearLayout>
