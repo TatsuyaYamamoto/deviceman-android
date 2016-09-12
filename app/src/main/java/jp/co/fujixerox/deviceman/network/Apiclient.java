@@ -2,8 +2,14 @@ package jp.co.fujixerox.deviceman.network;
 
 import android.util.Log;
 
+import java.util.List;
+
+import jp.co.fujixerox.deviceman.BuildConfig;
 import jp.co.fujixerox.deviceman.dto.Device;
 import jp.co.fujixerox.deviceman.dto.User;
+import jp.co.fujixerox.deviceman.dto.UserList;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -16,12 +22,41 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Apiclient {
     private static final String TAG = Apiclient.class.getName();
-    private static final String BASE_URL = "http://localhost:8888/";
+    private static final String BASE_URL = BuildConfig.APP_SERVER_ORIGIN;
 
     public interface ResponseListener<T>{
         void onHttpSuccess(T body);
         void onHttpError(int code, T body);
         void failure();
+    }
+
+    /**
+     * ユーザー情報をすべて取得する
+     * @param responseListener
+     */
+    public void getAllUser(final ResponseListener<UserList> responseListener){
+
+        Call<UserList> task = getService().getUsers();
+        task.enqueue(new Callback<UserList>() {
+            @Override
+            public void onResponse(Call<UserList> call, Response<UserList> response) {
+                switch (response.code()){
+                    case 200:
+                        responseListener.onHttpSuccess(response.body());
+                        break;
+                    default:
+                        responseListener.onHttpError(response.code(), response.body());
+                        break;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserList> call, Throwable t) {
+                Log.d(TAG, "couse: t" + t.getCause() + ", message: " + t.getMessage());
+
+                responseListener.failure();
+            }
+        });
     }
 
     /**
@@ -32,9 +67,6 @@ public class Apiclient {
     public void getUserById(String userId, final ResponseListener<User> responseListener){
 
         Call<User> task = getService().getUser(userId);
-
-        final User responseUser;
-
         task.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -151,9 +183,16 @@ public class Apiclient {
 
 
     private DmanService getService(){
+        OkHttpClient okHttpClient = new OkHttpClient()
+                .newBuilder()
+                // ロギング
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .build();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClient)
                 .build();
 
         return retrofit.create(DmanService.class);
