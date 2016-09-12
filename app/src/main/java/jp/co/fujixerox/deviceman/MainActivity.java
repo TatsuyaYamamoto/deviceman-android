@@ -38,8 +38,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, QRScanActivity.class);
-                startActivityForResult(intent, REQUEST_CODE_TO_SCAN_USER_ID);
+//                Intent intent = new Intent(MainActivity.this, QRScanActivity.class);
+//                startActivityForResult(intent, REQUEST_CODE_TO_SCAN_USER_ID);
+                Intent intent = new Intent(MainActivity.this, SelectUserActivity.class);
+                startActivity(intent);
+
             }
         });
 

@@ -16,29 +16,7 @@
     <string name="barcode_failure">No barcode captured</string>
     <string name="barcode_error">"Error reading barcode: %1$s"</string>
 
-
-
-    <string name="large_text">
-        "使い方！\n\n"
-
-        "1. ユーザーQRコード読み込み\n\n"
-        "hogehoge\n"
-        "hogehogehgeohge\n\n"
-
-        "2. 貸出、返却選択\n\n"
-        "hogehoge\n"
-        "hogehogehgeohge\n\n"
-
-        "3. デバイスQRコード読み込み\n\n"
-        "hogehoge\n"
-        "hogehogehgeohge\n\n"
-
-
-    </string>
     <string name="action_settings">Settings</string>
-
-
-
 
     <!--通信結果通知-->
     <string name="success_checkout">借り出し処理完了！（・８・）</string>
