@@ -26,12 +26,6 @@ public interface DmanService {
             @Query("user_id") String userId,
             @Query("due_return_time") long dueReturnTime);
 
-    @PUT("torica/api/devices/{device_id}/checkout")
-    Call<Void> updateCheckout(
-            @Path("device_id") String deviceId,
-            @Query("user_id") String userId,
-            @Query("due_return_time") long dueReturnTime);
-
     @POST("torica/api/devices/{device_id}/return")
     Call<Void> returnDevice(
             @Path("device_id") String deviceId,
