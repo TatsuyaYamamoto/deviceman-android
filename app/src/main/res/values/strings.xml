@@ -24,7 +24,7 @@
     <string name="error_checkout_confilt">既に貸出中です（・８・）</string>
 
     <string name="success_return">返却処理完了！（・８・）</string>
-    <string name="error_return_not_checked">既に貸出中です（・８・）</string>
+    <string name="error_return_not_checked">貸出されていない端末です（・８・）</string>
 
     <string name="error_invalid_id">"IDがサーバー未登録のものです（・８・）"</string>
     <string name="error_connection">通信失敗_(┐「ε:)_</string>
