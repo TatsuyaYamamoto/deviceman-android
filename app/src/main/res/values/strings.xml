@@ -28,4 +28,31 @@
 
     <string name="error_invalid_id">"IDがサーバー未登録のものです（・８・）"</string>
     <string name="error_connection">通信失敗_(┐「ε:)_</string>
+
+    <!--プロセスダイアログメッセージ-->
+    <string name="dialog_title_select_user">ユーザーを選択して下さい</string>
+
+    <!--プロセスダイアログメッセージ-->
+    <string name="dialog_message_default">Loading…</string>
+
+    <!--ボタンラベル-->
+    <string name="start_application">かしだし！</string>
+    <string name="button_label_submit_checkout">申請する</string>
+    <string name="button_label_cancel_checkout">キャンセル</string>
+
+    <!--toolbar title-->
+    <string name="toolbar_title_main">Trica Register</string>
+
+    <!-- other-->
+    <string name="loggedin_user_honorific"> さん</string>
+
+    <!-- check out sammary -->
+    <string name="check_message_body">以下の情報の通り端末借り出しを行います。</string>
+
+    <!-- tutorial message -->
+    <string name="tutorial_message_1">貸出開始ボタンを押してリストからあなたのアカウントを選択しよう！</string>
+    <string name="tutorial_message_2">貸出、返却ボタンを選択したら、開発端末のQRコードを読み込ませよう！</string>
+    <string name="tutorial_message_3">返却日を入力したら申請完了！</string>
+
+
 </resources>
