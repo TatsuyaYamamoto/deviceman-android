@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/fab_margin"
+    android:orientation="vertical"
+    android:id="@+id/layout_root_page1">
+
+    <ImageView
+        android:id="@+id/image_smartphone"
+        android:src="@mipmap/tutorial_smartphone"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="200dp"
+        android:contentDescription="@null"/>
+
+    <ImageView
+        android:id="@+id/image_torica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/tutorial_torica"
+        android:layout_gravity="left|center_vertical"
+        android:contentDescription="@null"/>
+
+    <ImageView
+        android:id="@+id/image_hand_point"
+        android:src="@mipmap/tutorial_hand_point"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="180dp"
+        android:rotation="40"
+        android:contentDescription="@null"/>
+
+    <TextView
+        android:id="@+id/tutorial_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tutorial_message_1"
+        android:gravity="center"
+        android:textSize="@dimen/test_size_medium"
+        android:layout_gravity="center_horizontal|top" />
+
+</FrameLayout>

@@ -14,7 +14,13 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="CustomCirclePageIndicator">
+        <item name="fillColor">@color/colorPrimary</item>
+        <item name="centered">true</item>
+        <item name="strokeColor">@color/colorPrimaryDark</item>
+        <item name="radius">6dp</item>
+    </style>
 
 </resources>
