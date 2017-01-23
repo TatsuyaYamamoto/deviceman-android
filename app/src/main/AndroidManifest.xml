@@ -10,31 +10,21 @@
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/icon"
-        android:label="@string/app_name"
+        android:label="Torica"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".SelectUserActivity"
-            android:label="Select User"/>
+        <activity android:name=".SelectOperationActivity"/>
 
-        <activity android:name=".SelectOperationActivity"
-                  android:label="Select Operation"/>
+        <activity android:name=".QRScanActivity"/>
 
-        <activity android:name=".QRScanActivity"
-                  android:label="Read Barcode"/>
-
-        <activity android:name=".CheckoutSummaryActivity"
-                  android:label="Confirm Checkout"/>
+        <activity android:name=".CheckoutSummaryActivity"/>
     </application>
 
 </manifest>
