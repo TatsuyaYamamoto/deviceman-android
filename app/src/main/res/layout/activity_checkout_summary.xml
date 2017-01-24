@@ -10,112 +10,200 @@
         android:id="@+id/text_checkout_cunfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="以下の情報の通り端末借り出しを行います。"/>
+        android:text="@string/check_message_body"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:layout_weight="1">
 
         <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/fab_margin"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/text_checkout_device_name_key"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="端末名"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/text_checkout_device_name_value"
+                <ImageView
+                    android:id="@+id/image_icon_device"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="20dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_phone_iphone_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/text_checkout_device_name_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/image_icon_device"
+                    android:text="端末名"/>
+
+                <TextView
+                    android:id="@+id/text_checkout_device_name_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text_checkout_device_name_key"
+                    android:layout_toRightOf="@id/image_icon_device"
+                    android:gravity="center"
+                    android:text="value"
+                    android:textSize="@dimen/test_size_medium"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/divider_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="value"
-                android:gravity="center"
-                android:textSize="@dimen/test_size_medium"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/text_checkout_user_id_key"
+                <ImageView
+                    android:id="@+id/image_icon_user"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="20dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_person_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/text_checkout_user_id_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/image_icon_user"
+                    android:text="ユーザーID"/>
+
+                <TextView
+                    android:id="@+id/text_checkout_user_id_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_checkout_user_id_key"
+                    android:layout_toRightOf="@id/image_icon_user"
+                    android:gravity="center"
+                    android:text="value"
+                    android:textSize="@dimen/test_size_medium"/>
+
+                <TextView
+                    android:id="@+id/text_checkout_user_name_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_checkout_user_id_value"
+                    android:layout_toRightOf="@id/image_icon_user"
+                    android:text="ユーザー名"/>
+
+                <TextView
+                    android:id="@+id/text_checkout_user_name_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_checkout_user_name_key"
+                    android:layout_toRightOf="@id/image_icon_user"
+                    android:gravity="center"
+                    android:text="value"
+                    android:textSize="@dimen/test_size_medium"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/divider_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ユーザーID"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/text_checkout_user_id_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="value"
-                android:gravity="center"
-                android:textSize="@dimen/test_size_medium"/>
+                <ImageView
+                    android:id="@+id/icon_time"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="20dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_access_alarm_black_24dp"/>
 
-            <TextView
-                android:id="@+id/text_checkout_user_name_key"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ユーザー名"/>
+                <TextView
+                    android:id="@+id/text_checkout_return_date_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/icon_time"
+                    android:text="返却予定日"/>
 
-            <TextView
-                android:id="@+id/text_checkout_user_name_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="value"
-                android:gravity="center"
-                android:textSize="@dimen/test_size_medium"/>
+                <FrameLayout
+                    android:id="@+id/text_checkout_return_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_checkout_return_date_key"
+                    android:layout_toRightOf="@id/icon_time">
 
-            <TextView
-                android:id="@+id/text_checkout_return_date_key"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="返却予定日"/>
+                    <TextView
+                        android:id="@+id/text_checkout_return_date_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="value"
+                        android:textSize="@dimen/test_size_medium"/>
 
-            <TextView
-                android:id="@+id/text_checkout_return_date_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="value"
-                android:gravity="center"
-                android:textSize="@dimen/test_size_medium"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp"/>
+                </FrameLayout>
 
-            <TextView
-                android:id="@+id/text_checkout_return_time_key"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="返却予定時間"/>
+                <TextView
+                    android:id="@+id/text_checkout_return_time_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_checkout_return_date"
+                    android:layout_toRightOf="@id/icon_time"
+                    android:text="返却予定時間"/>
 
-            <TextView
-                android:id="@+id/text_checkout_return_time_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="value"
-                android:gravity="center"
-                android:textSize="@dimen/test_size_medium"/>
+                <FrameLayout
+                    android:id="@+id/text_checkout_return_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_checkout_return_time_key"
+                    android:layout_toRightOf="@id/icon_time">
 
+                    <TextView
+                        android:id="@+id/text_checkout_return_time_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="value"
+                        android:textSize="@dimen/test_size_medium"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp"/>
+                </FrameLayout>
+
+            </RelativeLayout>
         </LinearLayout>
-
     </ScrollView>
 
     <Button
         android:id="@+id/button_checkout_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:layout_margin="@dimen/text_margin"
         android:background="@color/colorPrimary"
-        android:textColor="@color/common_signin_btn_dark_text_default"
-        android:layout_gravity="bottom"
-        android:text="SUBMIT"/>
+        android:text="@string/button_label_submit_checkout"
+        android:textColor="@color/common_signin_btn_dark_text_default"/>
 
     <Button
         android:id="@+id/button_checkout_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:layout_margin="@dimen/text_margin"
         android:background="@color/colorAccent"
-        android:textColor="@color/common_signin_btn_dark_text_default"
-        android:layout_gravity="bottom"
-        android:text="CANCEL"/>
+        android:text="@string/button_label_cancel_checkout"
+        android:textColor="@color/common_signin_btn_dark_text_default"/>
 
 </LinearLayout>
