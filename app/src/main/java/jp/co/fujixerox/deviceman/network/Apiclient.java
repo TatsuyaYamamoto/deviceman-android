@@ -40,13 +40,10 @@ public class Apiclient {
         task.enqueue(new Callback<UserList>() {
             @Override
             public void onResponse(Call<UserList> call, Response<UserList> response) {
-                switch (response.code()){
-                    case 200:
-                        responseListener.onHttpSuccess(response.body());
-                        break;
-                    default:
-                        responseListener.onHttpError(response.code(), response.body());
-                        break;
+                if(response.isSuccessful()){
+                    responseListener.onHttpSuccess(response.body());
+                }else{
+                    responseListener.onHttpError(response.code(), response.body());
                 }
             }
 
