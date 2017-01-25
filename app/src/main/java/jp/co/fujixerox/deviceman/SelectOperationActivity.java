@@ -2,9 +2,11 @@ package jp.co.fujixerox.deviceman;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +40,6 @@ public class SelectOperationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_operation);
 
         mApiclient = new Apiclient();
-
         mUser = (User) getIntent().getSerializableExtra(EXTRA_KEY_USER);
         setupView();
     }
@@ -120,7 +121,7 @@ public class SelectOperationActivity extends AppCompatActivity {
     private void checkIdAndGoToNextActivity(final String deviceId) {
 
         /* 端末情報を取得する */
-        mApiclient.getDeviceId(deviceId,  new Apiclient.ResponseListener<Device>() {
+        mApiclient.getDeviceId(deviceId, new Apiclient.ResponseListener<Device>() {
             @Override
             public void onHttpSuccess(Device device) {
                 Intent nextIntent = new Intent(SelectOperationActivity.this, CheckoutSummaryActivity.class);
@@ -151,7 +152,7 @@ public class SelectOperationActivity extends AppCompatActivity {
     private void requestReturnDeviceToServer(final String deviceId, final String userId) {
 
         /* 端末情報を取得する */
-        mApiclient.getDeviceId(deviceId,  new Apiclient.ResponseListener<Device>() {
+        mApiclient.getDeviceId(deviceId, new Apiclient.ResponseListener<Device>() {
             @Override
             public void onHttpSuccess(Device device) {
                 /* 確認ダイアログ */
@@ -170,7 +171,7 @@ public class SelectOperationActivity extends AppCompatActivity {
                                     }
 
                                     public void onHttpError(int code, Void _void) {
-                                        switch(code){
+                                        switch (code) {
                                             case 400:
                                                 Toast.makeText(getApplicationContext(), R.string.error_return_not_checked, Toast.LENGTH_SHORT).show();
                                                 break;
