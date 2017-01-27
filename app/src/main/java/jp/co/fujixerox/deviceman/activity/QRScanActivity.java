@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman;
+package jp.co.fujixerox.deviceman.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -27,6 +28,8 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
+import jp.co.fujixerox.deviceman.R;
+import jp.co.fujixerox.deviceman.SoundEffectPlayer;
 import jp.co.fujixerox.deviceman.barcode.BarcodeGraphic;
 import jp.co.fujixerox.deviceman.barcode.BarcodeTrackerFactory;
 import jp.co.fujixerox.deviceman.camera.CameraSource;
@@ -164,11 +167,16 @@ public class QRScanActivity extends AppCompatActivity {
             }
         }
 
+        // 使用するカメラデバイスを設定値から取得
+        int cameraFacing = PreferenceManager
+                .getDefaultSharedPreferences(QRScanActivity.this)
+                .getInt("facing", CameraSource.CAMERA_FACING_BACK);
+
         // Creates and starts the camera.  Note that this uses a higher resolution in comparison
         // to other detection examples to enable the barcode detector to detect small barcodes
         // at long distances.
         CameraSource.Builder builder = new CameraSource.Builder(getApplicationContext(), barcodeDetector)
-                .setFacing(CameraSource.CAMERA_FACING_BACK)
+                .setFacing(cameraFacing)
                 .setRequestedPreviewSize(1600, 1024)
                 .setRequestedFps(15.0f);
 

@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman;
+package jp.co.fujixerox.deviceman.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import jp.co.fujixerox.deviceman.R;
 import jp.co.fujixerox.deviceman.dto.Device;
 import jp.co.fujixerox.deviceman.dto.User;
 import jp.co.fujixerox.deviceman.fragment.DatePickerDialogFragment;

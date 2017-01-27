@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman;
+package jp.co.fujixerox.deviceman.activity;
 
 import android.support.v4.app.FragmentManager;
 import android.app.ProgressDialog;
@@ -21,6 +21,7 @@ import com.viewpagerindicator.PageIndicator;
 
 import java.io.Serializable;
 
+import jp.co.fujixerox.deviceman.R;
 import jp.co.fujixerox.deviceman.adapter.TutorialPagerAdapter;
 import jp.co.fujixerox.deviceman.dto.User;
 import jp.co.fujixerox.deviceman.dto.UserList;
