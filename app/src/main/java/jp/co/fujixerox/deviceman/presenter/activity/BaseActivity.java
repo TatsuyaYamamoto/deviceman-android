@@ -4,15 +4,14 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import jp.co.fujixerox.deviceman.App;
-import jp.co.fujixerox.deviceman.di.components.ActivityComponent;
-import jp.co.fujixerox.deviceman.di.components.AppComponent;
-import jp.co.fujixerox.deviceman.di.modules.ActivityModule;
+import jp.co.fujixerox.deviceman.presenter.di.components.ActivityComponent;
+import jp.co.fujixerox.deviceman.presenter.di.components.AppComponent;
+import jp.co.fujixerox.deviceman.presenter.di.modules.ActivityModule;
 
 /**
  * Base {@link Activity} class for every Activity in this application.

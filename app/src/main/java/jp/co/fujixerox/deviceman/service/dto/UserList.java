@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman.dto;
+package jp.co.fujixerox.deviceman.service.dto;
 
 import java.io.Serializable;
 import java.util.List;

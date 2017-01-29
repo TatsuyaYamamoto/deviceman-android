@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -14,9 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
 import java.io.Serializable;
@@ -25,16 +22,12 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import jp.co.fujixerox.deviceman.App;
 import jp.co.fujixerox.deviceman.R;
-import jp.co.fujixerox.deviceman.di.components.ActivityComponent;
-import jp.co.fujixerox.deviceman.di.components.AppComponent;
-import jp.co.fujixerox.deviceman.di.modules.ActivityModule;
 import jp.co.fujixerox.deviceman.presenter.adapter.TutorialPagerAdapter;
-import jp.co.fujixerox.deviceman.dto.User;
-import jp.co.fujixerox.deviceman.dto.UserList;
+import jp.co.fujixerox.deviceman.service.dto.User;
+import jp.co.fujixerox.deviceman.service.dto.UserList;
 import jp.co.fujixerox.deviceman.presenter.fragment.SelectUserDialogFragment;
-import jp.co.fujixerox.deviceman.network.Apiclient;
+import jp.co.fujixerox.deviceman.service.network.Apiclient;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";

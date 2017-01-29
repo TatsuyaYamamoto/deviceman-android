@@ -1,8 +1,6 @@
-package jp.co.fujixerox.deviceman.di.modules;
+package jp.co.fujixerox.deviceman.presenter.di.modules;
 
 import android.content.Context;
-
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;

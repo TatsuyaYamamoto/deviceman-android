@@ -18,11 +18,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jp.co.fujixerox.deviceman.R;
-import jp.co.fujixerox.deviceman.dto.Device;
-import jp.co.fujixerox.deviceman.dto.User;
+import jp.co.fujixerox.deviceman.service.dto.Device;
+import jp.co.fujixerox.deviceman.service.dto.User;
 import jp.co.fujixerox.deviceman.presenter.fragment.DatePickerDialogFragment;
 import jp.co.fujixerox.deviceman.presenter.fragment.TimePickerDialogFragment;
-import jp.co.fujixerox.deviceman.network.Apiclient;
+import jp.co.fujixerox.deviceman.service.network.Apiclient;
 
 public class CheckoutSummaryActivity extends BaseActivity {
     private static final String TAG = CheckoutSummaryActivity.class.getName();

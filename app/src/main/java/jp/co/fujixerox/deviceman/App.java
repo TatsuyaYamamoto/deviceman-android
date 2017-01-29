@@ -5,9 +5,9 @@ import android.util.Log;
 
 import com.squareup.leakcanary.LeakCanary;
 
-import jp.co.fujixerox.deviceman.di.components.AppComponent;
-import jp.co.fujixerox.deviceman.di.components.DaggerAppComponent;
-import jp.co.fujixerox.deviceman.di.modules.AppModule;
+import jp.co.fujixerox.deviceman.presenter.di.components.AppComponent;
+import jp.co.fujixerox.deviceman.presenter.di.components.DaggerAppComponent;
+import jp.co.fujixerox.deviceman.presenter.di.modules.AppModule;
 import jp.co.fujixerox.deviceman.util.ActivityLifecycleHandler;
 import lombok.Getter;
 

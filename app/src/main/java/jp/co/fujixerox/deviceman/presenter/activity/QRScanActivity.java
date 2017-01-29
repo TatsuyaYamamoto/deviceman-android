@@ -15,7 +15,6 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -32,14 +31,13 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import jp.co.fujixerox.deviceman.App;
 import jp.co.fujixerox.deviceman.R;
 import jp.co.fujixerox.deviceman.SoundEffectPlayer;
-import jp.co.fujixerox.deviceman.barcode.BarcodeGraphic;
-import jp.co.fujixerox.deviceman.barcode.BarcodeTrackerFactory;
-import jp.co.fujixerox.deviceman.camera.CameraSource;
-import jp.co.fujixerox.deviceman.camera.CameraSourcePreview;
-import jp.co.fujixerox.deviceman.barcode.GraphicOverlay;
+import jp.co.fujixerox.deviceman.service.barcode.BarcodeGraphic;
+import jp.co.fujixerox.deviceman.service.barcode.BarcodeTrackerFactory;
+import jp.co.fujixerox.deviceman.service.camera.CameraSource;
+import jp.co.fujixerox.deviceman.service.camera.CameraSourcePreview;
+import jp.co.fujixerox.deviceman.service.barcode.GraphicOverlay;
 
 /**
  * Created by TATSUYA-PC4 on 2016/07/03.

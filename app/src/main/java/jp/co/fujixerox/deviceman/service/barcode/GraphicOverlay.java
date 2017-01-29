@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.co.fujixerox.deviceman.barcode;
+package jp.co.fujixerox.deviceman.service.barcode;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -23,7 +23,7 @@ import android.view.View;
 import java.util.HashSet;
 import java.util.Set;
 
-import jp.co.fujixerox.deviceman.camera.CameraSource;
+import jp.co.fujixerox.deviceman.service.camera.CameraSource;
 
 /**
  * A view which renders a series of custom graphics to be overlayed on top of an associated preview

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.co.fujixerox.deviceman.barcode;
+package jp.co.fujixerox.deviceman.service.barcode;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

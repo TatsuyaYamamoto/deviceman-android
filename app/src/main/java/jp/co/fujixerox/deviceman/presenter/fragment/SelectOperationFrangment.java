@@ -14,7 +14,7 @@
 //import butterknife.OnClick;
 //import butterknife.Unbinder;
 //import jp.co.fujixerox.deviceman.R;
-//import jp.co.fujixerox.deviceman.dto.User;
+//import jp.co.fujixerox.deviceman.service.dto.User;
 //import jp.co.fujixerox.deviceman.presenter.activity.QRScanActivity;
 //
 //public class SelectOperationFrangment extends BaseFragment {

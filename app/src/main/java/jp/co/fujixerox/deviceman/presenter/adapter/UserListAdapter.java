@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import jp.co.fujixerox.deviceman.R;
-import jp.co.fujixerox.deviceman.dto.User;
+import jp.co.fujixerox.deviceman.service.dto.User;
 
 public class UserListAdapter extends BaseAdapter {
     private Context mContext;

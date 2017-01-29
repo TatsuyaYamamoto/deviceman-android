@@ -1,12 +1,11 @@
-package jp.co.fujixerox.deviceman.network;
+package jp.co.fujixerox.deviceman.service.network;
 
-import jp.co.fujixerox.deviceman.dto.Device;
-import jp.co.fujixerox.deviceman.dto.User;
-import jp.co.fujixerox.deviceman.dto.UserList;
+import jp.co.fujixerox.deviceman.service.dto.Device;
+import jp.co.fujixerox.deviceman.service.dto.User;
+import jp.co.fujixerox.deviceman.service.dto.UserList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 

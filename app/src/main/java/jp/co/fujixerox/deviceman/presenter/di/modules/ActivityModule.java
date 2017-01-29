@@ -1,11 +1,11 @@
-package jp.co.fujixerox.deviceman.di.modules;
+package jp.co.fujixerox.deviceman.presenter.di.modules;
 
 import android.content.Context;
 
 import dagger.Module;
 import dagger.Provides;
 import jp.co.fujixerox.deviceman.SoundEffectPlayer;
-import jp.co.fujixerox.deviceman.network.Apiclient;
+import jp.co.fujixerox.deviceman.service.network.Apiclient;
 
 @Module
 public class ActivityModule {

@@ -16,7 +16,7 @@ import java.util.List;
 
 import jp.co.fujixerox.deviceman.R;
 import jp.co.fujixerox.deviceman.presenter.adapter.UserListAdapter;
-import jp.co.fujixerox.deviceman.dto.User;
+import jp.co.fujixerox.deviceman.service.dto.User;
 
 public class SelectUserDialogFragment extends DialogFragment {
     private static String TAG = SelectUserDialogFragment.class.getSimpleName();

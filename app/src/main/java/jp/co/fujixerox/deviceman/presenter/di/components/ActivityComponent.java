@@ -1,13 +1,7 @@
-package jp.co.fujixerox.deviceman.di.components;
+package jp.co.fujixerox.deviceman.presenter.di.components;
 
-import javax.inject.Singleton;
-
-import dagger.Component;
 import dagger.Subcomponent;
-import jp.co.fujixerox.deviceman.App;
-import jp.co.fujixerox.deviceman.di.modules.ActivityModule;
-import jp.co.fujixerox.deviceman.di.modules.AppModule;
-import jp.co.fujixerox.deviceman.presenter.activity.BaseActivity;
+import jp.co.fujixerox.deviceman.presenter.di.modules.ActivityModule;
 import jp.co.fujixerox.deviceman.presenter.activity.CheckoutSummaryActivity;
 import jp.co.fujixerox.deviceman.presenter.activity.MainActivity;
 import jp.co.fujixerox.deviceman.presenter.activity.QRScanActivity;

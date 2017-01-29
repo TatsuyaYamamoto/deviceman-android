@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.co.fujixerox.deviceman.camera;
+package jp.co.fujixerox.deviceman.service.camera;
 
 import android.Manifest;
 import android.content.Context;
@@ -29,7 +29,7 @@ import com.google.android.gms.common.images.Size;
 
 import java.io.IOException;
 
-import jp.co.fujixerox.deviceman.barcode.GraphicOverlay;
+import jp.co.fujixerox.deviceman.service.barcode.GraphicOverlay;
 
 public class CameraSourcePreview extends ViewGroup {
     private static final String TAG = "CameraSourcePreview";

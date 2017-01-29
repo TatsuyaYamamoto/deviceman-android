@@ -8,16 +8,16 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
-  <jp.co.fujixerox.deviceman.camera.CameraSourcePreview
+  <jp.co.fujixerox.deviceman.service.camera.CameraSourcePreview
       android:id="@+id/preview"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-    <jp.co.fujixerox.deviceman.barcode.GraphicOverlay
+    <jp.co.fujixerox.deviceman.service.barcode.GraphicOverlay
         android:id="@+id/graphicOverlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-  </jp.co.fujixerox.deviceman.camera.CameraSourcePreview>
+  </jp.co.fujixerox.deviceman.service.camera.CameraSourcePreview>
 
 </LinearLayout>

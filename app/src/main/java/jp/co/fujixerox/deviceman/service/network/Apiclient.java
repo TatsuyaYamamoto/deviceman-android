@@ -1,16 +1,14 @@
-package jp.co.fujixerox.deviceman.network;
+package jp.co.fujixerox.deviceman.service.network;
 
 import android.content.Context;
 import android.util.Log;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import jp.co.fujixerox.deviceman.BuildConfig;
-import jp.co.fujixerox.deviceman.dto.Device;
-import jp.co.fujixerox.deviceman.dto.User;
-import jp.co.fujixerox.deviceman.dto.UserList;
+import jp.co.fujixerox.deviceman.service.dto.Device;
+import jp.co.fujixerox.deviceman.service.dto.User;
+import jp.co.fujixerox.deviceman.service.dto.UserList;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
