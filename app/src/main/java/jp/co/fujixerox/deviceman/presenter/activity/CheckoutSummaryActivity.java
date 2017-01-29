@@ -1,5 +1,6 @@
 package jp.co.fujixerox.deviceman.presenter.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -106,6 +107,12 @@ public class CheckoutSummaryActivity extends BaseActivity {
         finish();
     }
 
+    public static Intent getCallingIntent(Context context, User user, Device device) {
+        Intent callingIntent = new Intent(context, CheckoutSummaryActivity.class);
+        callingIntent.putExtra(EXTRA_KEY_USER, user);
+        callingIntent.putExtra(EXTRA_KEY_DEVICE, device);
+        return callingIntent;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

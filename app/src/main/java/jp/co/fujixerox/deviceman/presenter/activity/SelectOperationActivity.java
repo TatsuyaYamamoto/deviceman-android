@@ -9,6 +9,8 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,11 +30,9 @@ public class SelectOperationActivity extends BaseActivity {
     private static final String INSTANCE_STATE_PARAM_USER_ID = "org.android10.STATE_PARAM_USER_ID";
 
     private User mUser;
-    private Unbinder mUnbinder;
 
-    /* dependency */
+    @Inject
     private Apiclient mApiclient;
-
 
     @BindView(R.id.text_user_id)
     TextView userIdText;
@@ -78,8 +78,6 @@ public class SelectOperationActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_operation);
         ButterKnife.bind(this);
-
-        mApiclient = new Apiclient();
 
         if (savedInstanceState == null) {
             mUser = (User) getIntent().getSerializableExtra(INTENT_EXTRA_PARAM_USER);
@@ -143,10 +141,7 @@ public class SelectOperationActivity extends BaseActivity {
         mApiclient.getDeviceId(deviceId, new Apiclient.ResponseListener<Device>() {
             @Override
             public void onHttpSuccess(Device device) {
-                Intent nextIntent = new Intent(SelectOperationActivity.this, CheckoutSummaryActivity.class);
-                nextIntent.putExtra(CheckoutSummaryActivity.EXTRA_KEY_USER, mUser);
-                nextIntent.putExtra(CheckoutSummaryActivity.EXTRA_KEY_DEVICE, device);
-                startActivity(nextIntent);
+                startActivity(CheckoutSummaryActivity.getCallingIntent(SelectOperationActivity.this, mUser, device));
             }
 
             public void onHttpError(int code, Device device) {
