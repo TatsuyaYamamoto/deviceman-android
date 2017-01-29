@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman.activity;
+package jp.co.fujixerox.deviceman.presenter.activity;
 
 import android.support.v4.app.FragmentManager;
 import android.app.ProgressDialog;
@@ -21,29 +21,51 @@ import com.viewpagerindicator.PageIndicator;
 
 import java.io.Serializable;
 
+import javax.inject.Inject;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import jp.co.fujixerox.deviceman.App;
 import jp.co.fujixerox.deviceman.R;
-import jp.co.fujixerox.deviceman.adapter.TutorialPagerAdapter;
+import jp.co.fujixerox.deviceman.di.components.ActivityComponent;
+import jp.co.fujixerox.deviceman.di.components.AppComponent;
+import jp.co.fujixerox.deviceman.di.modules.ActivityModule;
+import jp.co.fujixerox.deviceman.presenter.adapter.TutorialPagerAdapter;
 import jp.co.fujixerox.deviceman.dto.User;
 import jp.co.fujixerox.deviceman.dto.UserList;
-import jp.co.fujixerox.deviceman.fragment.SelectUserDialogFragment;
+import jp.co.fujixerox.deviceman.presenter.fragment.SelectUserDialogFragment;
 import jp.co.fujixerox.deviceman.network.Apiclient;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
     private static final int REQUEST_CODE_TO_SCAN_USER_ID = 9001;
     private static final int REQUEST_CODE_TO_SELECT_USER_BY_LIST = 9002;
 
-    private Apiclient mApiclient;
+    @Inject
+    Apiclient mApiclient;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.toolbar_title)
+    TextView titleTextView;
+
+    @BindView(R.id.viewpager_tutorial)
+    ViewPager viewPager_tutorial;
+
+    @BindView(R.id.pageIndicator)
+    PageIndicator indicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
+        getActivityComponent().inject(this);
+
         /* toolbar ラベルフォントの設定 */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
-        TextView titleTextView = (TextView)toolbar.findViewById(R.id.toolbar_title);
         titleTextView.setTypeface(Typeface.createFromAsset(MainActivity.this.getAssets(), "fonts/amemuchigothic-h.ttf"));
         setSupportActionBar(toolbar);
 
@@ -57,15 +79,9 @@ public class MainActivity extends AppCompatActivity {
 
         /* チュートリアル用Pager */
         FragmentManager tutorialPagerFragmentManager = getSupportFragmentManager();
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager_tutorial);
-
         TutorialPagerAdapter adapter = new TutorialPagerAdapter(tutorialPagerFragmentManager);
-        viewPager.setAdapter(adapter);
-
-        PageIndicator indicator = (CirclePageIndicator)findViewById(R.id.pageIndicator);
-        indicator.setViewPager(viewPager);
-
-        mApiclient = new Apiclient();
+        viewPager_tutorial.setAdapter(adapter);
+        indicator.setViewPager(viewPager_tutorial);
     }
 
     @Override
@@ -93,12 +109,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if(resultCode == RESULT_CANCELED){
+        if (resultCode == RESULT_CANCELED) {
             // ignore
             return;
         }
 
-        if(resultCode == RESULT_OK && data != null) {
+        if (resultCode == RESULT_OK && data != null) {
 
             switch (requestCode) {
                 case REQUEST_CODE_TO_SCAN_USER_ID:
@@ -118,16 +134,14 @@ public class MainActivity extends AppCompatActivity {
                     super.onActivityResult(requestCode, resultCode, data);
             }
 
-        }else{
+        } else {
             // result failure
             Log.d(TAG, "Activity Result is failed. result code is ok, but it doesn't have a data.");
         }
     }
 
-    private void goNextActivity(User selectedUser){
-        Intent intent = new Intent(MainActivity.this, SelectOperationActivity.class);
-        intent.putExtra(SelectOperationActivity.EXTRA_KEY_USER, selectedUser);
-        startActivity(intent);
+    private void goNextActivity(User selectedUser) {
+        startActivity(SelectOperationActivity.getCallingIntent(this, selectedUser));
         overridePendingTransition(R.anim.in_right, R.anim.out_left);
     }
 
@@ -135,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
      * API REQUEST
      *******************/
 
-    private void openUserSelectDialog(){
+    private void openUserSelectDialog() {
         // プログレスダイアログを表示する
         final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
         progressDialog.setIndeterminate(true);
@@ -159,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onHttpError(int code, UserList users) {
-                Toast.makeText(getApplicationContext(), "ユーザーリストの取得に失敗しました。管理者にお問い合わ下さい。", Toast.LENGTH_SHORT).show();
+                showToastMessage("ユーザーリストの取得に失敗しました。管理者にお問い合わ下さい。");
                 progressDialog.dismiss();
                 finish();
                 Log.d(TAG, "user information does not exist");
@@ -167,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void failure() {
-                Toast.makeText(getApplicationContext(), "通信失敗_(┐「ε:)_ユーザーリストの取得に失敗しました。管理者にお問い合わ下さい。", Toast.LENGTH_SHORT).show();
+                showToastMessage("通信失敗_(┐「ε:)_ユーザーリストの取得に失敗しました。管理者にお問い合わ下さい。");
                 progressDialog.dismiss();
                 finish();
                 Log.d(TAG, "failure to get user information.");
@@ -192,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onHttpSuccess(User user) {
                 Log.d(TAG, "success to get user information. id: " + user.getId() + ", name: " + user.getName());
-                Toast.makeText(getApplicationContext(), user.getId() + user.getName() + "さん、こんにちは(・８・)", Toast.LENGTH_SHORT).show();
+                showToastMessage(user.getId() + user.getName() + "さん、こんにちは(・８・)");
 
                 progressDialog.dismiss();
                 goNextActivity(user);
@@ -200,14 +214,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onHttpError(int code, User body) {
-                Toast.makeText(getApplicationContext(), "入力されたIDがサーバーに登録されていません。", Toast.LENGTH_SHORT).show();
+                showToastMessage("入力されたIDがサーバーに登録されていません。");
                 progressDialog.dismiss();
                 Log.d(TAG, "user information does not exist");
             }
 
             @Override
             public void failure() {
-                Toast.makeText(getApplicationContext(), "通信失敗_(┐「ε:)_ユーザー情報を確認できませんでした。", Toast.LENGTH_SHORT).show();
+                showToastMessage("通信失敗_(┐「ε:)_ユーザー情報を確認できませんでした。");
                 progressDialog.dismiss();
                 Log.d(TAG, "failure to get user information.");
             }

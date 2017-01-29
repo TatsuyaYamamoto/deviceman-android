@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman.activity;
+package jp.co.fujixerox.deviceman.presenter.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -28,6 +28,11 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import jp.co.fujixerox.deviceman.App;
 import jp.co.fujixerox.deviceman.R;
 import jp.co.fujixerox.deviceman.SoundEffectPlayer;
 import jp.co.fujixerox.deviceman.barcode.BarcodeGraphic;
@@ -40,7 +45,7 @@ import jp.co.fujixerox.deviceman.barcode.GraphicOverlay;
  * Created by TATSUYA-PC4 on 2016/07/03.
  */
 
-public class QRScanActivity extends AppCompatActivity {
+public class QRScanActivity extends BaseActivity {
     private static final String TAG = QRScanActivity.class.getName();
 
     // intent request code to handle updating play services if needed.
@@ -56,11 +61,15 @@ public class QRScanActivity extends AppCompatActivity {
     private static final boolean AUTO_FOCUS = true;
 
     private CameraSource mCameraSource;
-    private CameraSourcePreview mPreview;
-    private GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
 
-    /* dependency */
-    private SoundEffectPlayer mSoundEffectPlayer;
+    @BindView(R.id.preview)
+    CameraSourcePreview mPreview;
+
+    @BindView(R.id.graphicOverlay)
+    GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
+
+    @Inject
+    SoundEffectPlayer mSoundEffectPlayer;
 
     /**
      * Initializes the UI and creates the detector pipeline.
@@ -69,9 +78,8 @@ public class QRScanActivity extends AppCompatActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.barcode_capture);
-
-        mPreview = (CameraSourcePreview) findViewById(R.id.preview);
-        mGraphicOverlay = (GraphicOverlay<BarcodeGraphic>) findViewById(R.id.graphicOverlay);
+        getActivityComponent().inject(this);
+        ButterKnife.bind(this);
 
         // Check for the camera permission before accessing the camera.  If the
         // permission is not granted yet, request permission.
@@ -81,8 +89,6 @@ public class QRScanActivity extends AppCompatActivity {
         } else {
             requestCameraPermission();
         }
-
-        mSoundEffectPlayer = new SoundEffectPlayer(QRScanActivity.this);
     }
 
     /**

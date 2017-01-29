@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman.fragment;
+package jp.co.fujixerox.deviceman.presenter.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -15,7 +15,7 @@ import android.widget.ListView;
 import java.util.List;
 
 import jp.co.fujixerox.deviceman.R;
-import jp.co.fujixerox.deviceman.adapter.UserListAdapter;
+import jp.co.fujixerox.deviceman.presenter.adapter.UserListAdapter;
 import jp.co.fujixerox.deviceman.dto.User;
 
 public class SelectUserDialogFragment extends DialogFragment {

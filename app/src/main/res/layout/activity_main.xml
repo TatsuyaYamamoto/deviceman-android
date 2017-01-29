@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="jp.co.fujixerox.deviceman.MainActivity">
+    tools:context=".presenter.activity.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -51,7 +51,7 @@
         android:id="@+id/button_start_application"
         android:text="@string/start_application"
         android:background="@color/colorPrimary"
-        android:textColor="@color/common_signin_btn_dark_text_default"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="@dimen/test_size_medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

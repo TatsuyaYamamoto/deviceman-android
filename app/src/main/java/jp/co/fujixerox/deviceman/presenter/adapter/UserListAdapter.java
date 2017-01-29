@@ -1,4 +1,4 @@
-package jp.co.fujixerox.deviceman.adapter;
+package jp.co.fujixerox.deviceman.presenter.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

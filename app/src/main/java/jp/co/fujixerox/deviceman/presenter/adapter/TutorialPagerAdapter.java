@@ -1,14 +1,11 @@
-package jp.co.fujixerox.deviceman.adapter;
+package jp.co.fujixerox.deviceman.presenter.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jp.co.fujixerox.deviceman.R;
-import jp.co.fujixerox.deviceman.fragment.TutorialPageFragment;
+import jp.co.fujixerox.deviceman.presenter.fragment.TutorialPageFragment;
 
 public class TutorialPagerAdapter extends FragmentPagerAdapter {
 

@@ -1,20 +1,16 @@
-package jp.co.fujixerox.deviceman.fragment;
+package jp.co.fujixerox.deviceman.presenter.fragment;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.PendingIntent;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
 import android.util.Log;
 import android.widget.DatePicker;
-import android.widget.TimePicker;
 
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 /**
  * Created by TATSUYA-PC4 on 2016/07/03.

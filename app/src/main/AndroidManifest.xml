@@ -13,18 +13,18 @@
         android:label="Torica"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".presenter.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".SelectOperationActivity"/>
+        <activity android:name=".presenter.activity.SelectOperationActivity"/>
 
-        <activity android:name=".QRScanActivity"/>
+        <activity android:name=".presenter.activity.QRScanActivity"/>
 
-        <activity android:name=".CheckoutSummaryActivity"/>
+        <activity android:name=".presenter.activity.CheckoutSummaryActivity"/>
     </application>
 
 </manifest>
