@@ -32,7 +32,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import jp.co.fujixerox.deviceman.R;
-import jp.co.fujixerox.deviceman.SoundEffectPlayer;
+import jp.co.fujixerox.deviceman.service.SoundEffectPlayer;
 import jp.co.fujixerox.deviceman.service.barcode.BarcodeGraphic;
 import jp.co.fujixerox.deviceman.service.barcode.BarcodeTrackerFactory;
 import jp.co.fujixerox.deviceman.service.camera.CameraSource;

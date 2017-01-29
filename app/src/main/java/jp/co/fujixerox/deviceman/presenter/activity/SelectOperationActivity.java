@@ -32,7 +32,7 @@ public class SelectOperationActivity extends BaseActivity {
     private User mUser;
 
     @Inject
-    private Apiclient mApiclient;
+    Apiclient mApiclient;
 
     @BindView(R.id.text_user_id)
     TextView userIdText;
@@ -77,6 +77,7 @@ public class SelectOperationActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_operation);
+        getActivityComponent().inject(this);
         ButterKnife.bind(this);
 
         if (savedInstanceState == null) {

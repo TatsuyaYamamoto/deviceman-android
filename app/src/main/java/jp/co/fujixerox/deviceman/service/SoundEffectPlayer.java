@@ -1,17 +1,17 @@
-package jp.co.fujixerox.deviceman;
+package jp.co.fujixerox.deviceman.service;
 
 import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 
-/**
- * Created by TATSUYA-PC4 on 2016/07/18.
- */
+import javax.inject.Inject;
 
 public class SoundEffectPlayer {
+
     private Context mContext;
 
+    @Inject
     public SoundEffectPlayer(Context context){
         mContext = context;
     }

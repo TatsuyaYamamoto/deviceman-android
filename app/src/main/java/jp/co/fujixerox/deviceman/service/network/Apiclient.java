@@ -23,7 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Apiclient {
     private static final String TAG = Apiclient.class.getName();
-    private static final String BASE_URL = BuildConfig.APP_SERVER_ORIGIN;
 
     public interface ResponseListener<T> {
         void onHttpSuccess(T body);
@@ -32,9 +31,6 @@ public class Apiclient {
 
         void failure();
     }
-
-    @Inject
-    Context mContext;
 
     /**
      * ユーザー情報をすべて取得する
@@ -195,7 +191,7 @@ public class Apiclient {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BuildConfig.APP_SERVER_ORIGIN)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
